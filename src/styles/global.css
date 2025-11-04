@@ -1,0 +1,33 @@
+:root {
+  --bg-light: #f9fafb;
+  --bg-dark: #0f172a;
+  --text-light: #0f172a;
+  --text-dark: #f9fafb;
+  --accent: #6366f1;
+  --transition: 0.3s ease-in-out;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
