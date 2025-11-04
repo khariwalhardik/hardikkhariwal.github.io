@@ -1,15 +1,140 @@
+/* ============================================
+   GLOBAL COLOR VARIABLES
+   Supports both Light and Dark Themes
+   ============================================ */
+
 :root {
-  --bg: #f9fafb;
-  --text: #111;
-  --accent: #3b82f6;
-  --card-bg: #fff;
-  --card-shadow: rgba(0, 0, 0, 0.08);
+  /* Typography */
+  --font-primary: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-round: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
+/* ============================================
+   LIGHT THEME
+   ============================================ */
+[data-theme="light"] {
+  /* Core Colors */
+  --background: #f9fafb;
+  --background-alt: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #4b5563;
+  --border: #e5e7eb;
+
+  /* Accent / Primary */
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-light: #dbeafe;
+
+  /* Section Backgrounds */
+  --hero-gradient: linear-gradient(135deg, #e0f2ff 0%, #f9fafb 100%);
+  --section-bg: #ffffff;
+  --card-bg: #ffffff;
+  --input-bg: #f1f5f9;
+
+  /* Other */
+  --link: var(--accent);
+  --link-hover: var(--accent-hover);
+  --hero-border: var(--accent);
+}
+
+/* ============================================
+   DARK THEME
+   ============================================ */
 [data-theme="dark"] {
-  --bg: #0f172a;
-  --text: #e2e8f0;
+  /* Core Colors */
+  --background: #0f172a;
+  --background-alt: #1e293b;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border: #334155;
+
+  /* Accent / Primary */
   --accent: #60a5fa;
+  --accent-hover: #3b82f6;
+  --accent-light: #1d4ed8;
+
+  /* Section Backgrounds */
+  --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --section-bg: #1e293b;
   --card-bg: #1e293b;
-  --card-shadow: rgba(0, 0, 0, 0.4);
+  --input-bg: #334155;
+
+  /* Other */
+  --link: var(--accent);
+  --link-hover: var(--accent-hover);
+  --hero-border: var(--accent);
+}
+
+/* ============================================
+   GLOBAL ELEMENT STYLES (optional)
+   ============================================ */
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--font-primary);
+  transition: background var(--transition-medium), color var(--transition-medium);
+  margin: 0;
+  padding: 0;
+}
+
+/* Reusable utility classes */
+.text-muted {
+  color: var(--text-muted);
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-medium), border var(--transition-medium);
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-round);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.button-primary:hover {
+  background: var(--accent-hover);
+  transform: scale(1.05);
+}
+
+.button-outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  border-radius: var(--radius-round);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: transform var(--transition-fast), color var(--transition-fast), border var(--transition-fast);
+}
+
+.button-outline:hover {
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: scale(1.05);
 }
