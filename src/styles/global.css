@@ -1,3 +1,19 @@
+@import "./variables.css";
+
+/* Global resets, typography, etc. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
 :root {
   --bg-light: #f9fafb;
   --bg-dark: #0f172a;
